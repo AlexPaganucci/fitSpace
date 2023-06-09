@@ -3,7 +3,8 @@
     <div class="inside-img fonts">
       <div>
         <ng-container *ngIf="isLogged; else notLogged">
-          <p>ciao</p>
+          <p>Cosa hai pianificato per oggi? Scegli tra una varietà di attività per rimanere attivo/a!</p>
+          <button mat-button color="warn" routerLink="/user">ATTIVITÀ</button>
         </ng-container>
         <ng-template #notLogged>
           <p>Metti in moto il tuo stile di vita e tieni traccia dei tuoi progressi con facilità.</p>

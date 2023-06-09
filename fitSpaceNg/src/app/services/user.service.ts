@@ -1,9 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, filter, tap } from 'rxjs';
+import { BehaviorSubject, Observable, catchError, filter, switchMap, tap, throwError } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { CONST_UTENTE } from './auth.service';
 import { User } from '../models/user';
+import { Activity, ActivityPayloads } from '../models/activity';
 
 @Injectable({
   providedIn: 'root'
@@ -24,5 +25,23 @@ export class UserService {
     return this.http.get<User>(`${this.apiUrl}/user/${userId}`).pipe(
       tap(user => this.userSubject.next(user))
     )
+  }
+
+  saveActivity(activityPayloads: ActivityPayloads): Observable<Activity> {
+    return this.getUser().pipe(
+      switchMap((user) => {
+        const userId = user.id;
+        console.log(user);
+        if (userId === undefined) {
+          console.log("errore: non è stato trovato l'id dello User");
+          return throwError("Errore: non è stato trovato l'id dello User");
+        }
+        return this.http.post<Activity>(`${this.apiUrl}/activity/save/${userId}`, activityPayloads);
+      }),
+      catchError((error) => {
+        console.log(error);
+        return throwError(error);
+      })
+    );
   }
 }

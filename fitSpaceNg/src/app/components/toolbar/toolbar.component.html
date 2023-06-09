@@ -23,6 +23,7 @@
     <button class="log" mat-button routerLink="/login">ACCEDI</button>
   </div>
   <div *ngIf="isLargeScreen && isLogged">
-    <button class="log" mat-button routerLink="/user">PAGINA PERSONALE</button>
+    <button class="log" mat-button routerLink="/user">ATTIVITÀ</button>
+    <button class="log" mat-button (click)="openLogoutModal()">ESCI</button>
   </div>
 </mat-toolbar>

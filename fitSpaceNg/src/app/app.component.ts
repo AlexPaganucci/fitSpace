@@ -1,5 +1,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { AuthService } from './services/auth.service';
+import { MatDialog } from '@angular/material/dialog';
+import { ConfirmLogoutComponent } from './components/confirm-logout/confirm-logout.component';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +15,7 @@ export class AppComponent implements OnInit {
   showFiller = false;
   isLogged = false;
 
-  constructor(private authSrv: AuthService) {}
+  constructor(private authSrv: AuthService, private dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.onResize();
@@ -35,8 +37,7 @@ export class AppComponent implements OnInit {
     this.isLargeScreen = window.innerWidth > 765;
   }
 
-  ciao(){
-    console.log("registrazione");
-
+  openLogoutModal() {
+    this.dialog.open(ConfirmLogoutComponent);
   }
 }

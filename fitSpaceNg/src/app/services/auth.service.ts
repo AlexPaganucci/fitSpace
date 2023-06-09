@@ -77,7 +77,7 @@ export class AuthService {
     return sessionStorage.getItem(CONST_UTENTE) != null ? true : false;
   }
 
-  public logout() {
+  logout() {
     this.authSubject.next(null);
     sessionStorage.removeItem(CONST_UTENTE);
   }

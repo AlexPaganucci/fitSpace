@@ -14,6 +14,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { UserComponent } from './components/user/user.component';
+import { ConfirmLogoutComponent } from './components/confirm-logout/confirm-logout.component';
+import { ReccomendedActivitiesComponent } from './components/reccomended-activities/reccomended-activities.component';
+import { AddActivityComponent } from './components/add-activity/add-activity.component';
 
 
 @NgModule({
@@ -24,7 +27,10 @@ import { UserComponent } from './components/user/user.component';
     FooterComponent,
     LoginComponent,
     SignupComponent,
-    UserComponent
+    UserComponent,
+    ConfirmLogoutComponent,
+    ReccomendedActivitiesComponent,
+    AddActivityComponent
   ],
   imports: [
     BrowserModule,

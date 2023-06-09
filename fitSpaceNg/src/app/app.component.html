@@ -6,7 +6,8 @@
         <div class="log-sig">
           <button *ngIf="!isLogged" mat-button routerLink="/signup">REGISTRATI</button>
           <button *ngIf="!isLogged" mat-button routerLink="/login">ACCEDI</button>
-          <button *ngIf="isLogged" mat-button routerLink="/user">PAGINA PERSONALE</button>
+          <button *ngIf="isLogged" mat-button routerLink="/user">ATTIVITÀ</button>
+          <button *ngIf="isLogged" mat-button (click)="openLogoutModal()">ESCI</button>
         </div>
         <div *ngIf="!isLargeScreen" class="icons">
           <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">

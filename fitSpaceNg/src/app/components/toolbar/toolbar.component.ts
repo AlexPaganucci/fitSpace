@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
+import { ConfirmLogoutComponent } from '../confirm-logout/confirm-logout.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-toolbar',
@@ -12,7 +14,7 @@ export class ToolbarComponent implements OnInit {
   @Input() isLargeScreen!: boolean;
   isLogged = false;
 
-  constructor(private authSrv: AuthService) { }
+  constructor(private authSrv: AuthService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.authSrv.auth$.subscribe(token => {
@@ -25,6 +27,10 @@ export class ToolbarComponent implements OnInit {
     if (this.authSrv.isLogged() && this.authSrv.checkTokenValidity()) {
       this.isLogged = true;
     }
+  }
+
+  openLogoutModal() {
+    this.dialog.open(ConfirmLogoutComponent);
   }
 
 }

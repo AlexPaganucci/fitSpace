@@ -1,1 +1,35 @@
-<p>user works!</p>
+<div *ngIf="user">
+  <div class="img">
+    <div class="inside-img">
+      <h2 class="fonts">Buongiorno {{user.name}}, Ecco la tua dashboard personale</h2>
+      <p>Puoi controllare le attività raccomandate create appositamente per te</p>
+      <button mat-button color="warn" (click)="openRecommendedActivities()">CLICCA QUI</button>
+    </div>
+  </div>
+  <section class="section-1-user">
+    <h3 class="fonts">TIENI TRACCIA DELLE TUE ATTIVITÀ</h3>
+    <p>Aggiungi un attività
+      <button mat-icon-button color="warn" (click)="openAddActivity()" class="example-icon" aria-label="Example icon-button with menu icon">
+        <i class="fa-solid fa-plus"></i>
+      </button>
+    </p>
+    <div class="container-card">
+      <div class="card" *ngFor="let activity of user.activities">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title *ngIf="activity.typeActivity">{{activity.typeActivity}}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>{{activity.duration}} minuti.</p>
+            <p *ngIf="activity.distance">{{activity.distance}} metri.</p>
+            <p>Hai consumato all'incirca {{activity.calories}} calorie.</p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button color="warn">SHARE</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+  </section>
+</div>
+

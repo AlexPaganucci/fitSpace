@@ -1,0 +1,9 @@
+<h3 mat-dialog-title>Le tue attività raccomandate</h3>
+<div mat-dialog-content *ngIf="user">
+  <div *ngFor="let recommendedActivity of user.goal.recommendedActivities">
+    <p>{{recommendedActivity}}</p>
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Annulla</button>
+</div>

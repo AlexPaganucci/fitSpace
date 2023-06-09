@@ -1,0 +1,29 @@
+<h3 mat-dialog-title>Aggiungi un attività</h3>
+<div mat-dialog-content>
+  <div>
+    <form class="example-form" [formGroup]="addActivityForm">
+      <mat-form-field class="example-full-widht" color="warn">
+        <mat-label>Tipo di attività</mat-label>
+        <mat-select formControlName="typeActivity">
+          <mat-option value="RUN">corsa</mat-option>
+          <mat-option value="WALK">camminata</mat-option>
+          <mat-option value="CYCLING">bicicletta</mat-option>
+          <mat-option value="SWIM">nuoto</mat-option>
+          <mat-option value="GYM">palestra</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="example-full-width" color="warn">
+        <mat-label>Durata</mat-label>
+        <input matInput type="number" formControlName="duration">
+      </mat-form-field>
+      <mat-form-field class="example-full-width" color="warn">
+        <mat-label>Distanza</mat-label>
+        <input matInput type="number" formControlName="distance">
+      </mat-form-field>
+      <button mat-button mat-dialog-close color="warn" (click)="onSubmitAddActivity()">AGGIUNGI</button>
+    </form>
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Annulla</button>
+</div>
