@@ -1,0 +1,55 @@
+.fonts{
+  font-family: 'League Gothic', sans-serif;
+  font-size: 2rem;
+}
+
+.center{
+  text-align: center;
+  padding: 5rem;
+}
+
+.example-form {
+  max-width: 500px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+tr{
+  max-width: 80%;
+}
+
+td {
+  padding-right: 8px;
+  width: 30px;
+}
+
+td>*{
+  width: 90%;
+}
+
+.goToLogin{
+  padding: 5rem;
+}
+
+@media screen and (max-width: 376px){
+
+  tr {
+    display: flex;
+    flex-wrap: wrap; /* Aggiungi questa proprietà per consentire il wrapping degli elementi */
+    justify-content: space-between; /* Aggiungi questa proprietà per distribuire gli elementi su tutto lo spazio disponibile */
+  }
+
+  td {
+    padding-right: 8px;
+    flex-basis: 100%; /* Aggiungi questa proprietà per impostare la larghezza dei td */
+  }
+
+  td > * {
+    width: 100%;
+  }
+
+}

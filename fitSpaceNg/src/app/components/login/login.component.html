@@ -1,0 +1,29 @@
+<div class="center">
+  <h2 class="fonts">BEN TORNATO</h2>
+  <h3 class="fonts">ACCEDI</h3>
+</div>
+<form>
+  <div class="example-container">
+    <mat-form-field class="example-full-width" color="warn">
+      <mat-label>Inserisci la tua email</mat-label>
+      <input matInput placeholder="pat@example.com" [formControl]="email" required>
+      <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+  </div>
+  <div class="example-container">
+    <mat-form-field class="example-full-width" color="warn">
+      <mat-label>Inserisci la password</mat-label>
+      <input matInput [type]="hide ? 'password' : 'text'" [formControl]="password" required>
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+  <button mat-button color="warn" type="submit" (click)="onSubmit()" [disabled]="!email.valid && !password.valid">Accedi</button>
+</form>
+<p class="goToSignup">
+  Non sei ancora registrato?
+  <button mat-button routerLink="/signup" color="warn">Clicca qui</button>
+</p>
+

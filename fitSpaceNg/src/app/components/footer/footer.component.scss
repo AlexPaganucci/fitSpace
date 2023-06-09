@@ -1,0 +1,33 @@
+.footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5rem;
+  text-align: center;
+  background-color: black;
+}
+
+.icons button i{
+  font-size: 1.5rem;
+}
+
+.icons button i:hover{
+  color: #EEFF41;
+}
+
+.fonts{
+  font-family: 'League Gothic', sans-serif;
+  font-size: 2rem;
+  color: #EEFF41;
+}
+
+@media screen and (max-width: 768px){
+
+  .footer{
+    flex-direction: column;
+  }
+
+  .footer >*{
+    margin-bottom: 2rem;
+  }
+}

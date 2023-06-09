@@ -1,0 +1,209 @@
+.img{
+  background-image: url(../../../assets/img/pexels-victor-freitas-841130.jpg);
+  background-size: cover;
+  height: 600px;
+  width: 100%;
+  background-position: center;
+}
+
+.img::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.inside-img {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 600px;
+  text-transform: uppercase;
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inside-img > div {
+  padding: 8rem;
+  width: 50%;
+  text-align: center;
+  color: white;
+  margin-top: 5rem;
+}
+
+.inside-img p {
+  margin-bottom: 1rem;
+  line-height: 1;
+}
+
+.inside-img h2 {
+  margin-bottom: 2rem;
+}
+
+.section-1-home{
+  position: relative;
+  text-align: center;
+  font-size: 1rem;
+  z-index: 5;
+  font-family: 'Poppins', sans-serif;
+  background-image: url(../../../assets/img/muscle.png);
+  background-position: right -150px bottom 0px, right 20px bottom 20px, right 30px bottom 30px;
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-size: 50%;
+}
+
+.flex{
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex img{
+  width: 300px;
+  margin: 0;
+}
+
+.padding{
+  padding: 10rem;
+  padding-top: 15rem;
+}
+
+.img-2{
+  background-image: url(../../../assets/img/run.jpg);
+  background-size: cover;
+  height: 400px;
+  width: 100%;
+  background-position: top;
+}
+
+.inside-img-2 {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 400px;
+  text-transform: uppercase;
+  font-size: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.inside-img-2 p {
+  margin-bottom: 1rem;
+  line-height: 1;
+}
+
+.section-2-home{
+  position: relative;
+  text-align: center;
+  font-size: 1rem;
+  z-index: 5;
+  font-family: 'Poppins', sans-serif;
+  background-image: url(../../../assets/img/man.png);
+  background-position: left -150px bottom 0px, left 20px bottom 20px, left 30px bottom 30px;
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-size: 50%;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+td {
+  padding-right: 8px;
+}
+
+form{
+  padding-bottom: 5rem;
+}
+
+@media screen and (max-width: 1024px){
+
+  .padding{
+    padding: 8rem;
+  }
+
+  .section-1-home{
+    background-size: 80%;
+  }
+
+  .section-2-home{
+    background-size: 80%;
+  }
+
+}
+
+@media screen and (max-width: 768px){
+
+  .padding{
+    padding: 5rem;
+  }
+
+  .section-1-home{
+    background-position: right -250px bottom 0px, right 20px bottom 20px, right 30px bottom 30px;
+  }
+
+  .section-2-home{
+    background-position: left -250px bottom 0px, left 20px bottom 20px, left 30px bottom 30px;
+  }
+
+}
+
+@media screen and (max-width: 500px){
+
+  .inside-img > div {
+    padding: 4rem;
+    width: 80%;
+  }
+
+  .padding{
+    padding: 2rem;
+  }
+
+  .section-1-home{
+    background-image: none;
+  }
+
+  .section-2-home{
+    background-image: none;
+  }
+
+  .example-full-width {
+    width: 95%;
+  }
+
+  td {
+    padding: 0px;
+  }
+
+}
+
+@media screen and (max-width: 376px){
+
+  .inside-img > div {
+    padding: 0rem;
+    width: 95%;
+  }
+
+  .padding{
+    padding: 1rem;
+  }
+
+}
+
+
+
+

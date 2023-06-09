@@ -1,0 +1,28 @@
+<mat-toolbar>
+  <!-- <img src="../../../assets/img/1.png" alt="logo fitSpace" height="150px"> -->
+  <h1 routerLink="/" class="fonts">FITSPACE</h1>
+  <button *ngIf="!isLargeScreen" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="toggleDrawerFn()">
+    <mat-icon class="menu">menu</mat-icon>
+  </button>
+  <div *ngIf="isLargeScreen" class="icons">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <i class="fa-brands fa-instagram"></i>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <i class="fa-brands fa-youtube"></i>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <i class="fa-brands fa-twitter"></i>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <i class="fa-brands fa-facebook"></i>
+    </button>
+  </div>
+  <div *ngIf="isLargeScreen && !isLogged">
+    <button class="log" mat-button routerLink="/signup">REGISTRATI</button>
+    <button class="log" mat-button routerLink="/login">ACCEDI</button>
+  </div>
+  <div *ngIf="isLargeScreen && isLogged">
+    <button class="log" mat-button routerLink="/user">PAGINA PERSONALE</button>
+  </div>
+</mat-toolbar>

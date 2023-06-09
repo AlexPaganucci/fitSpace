@@ -1,0 +1,39 @@
+.fonts{
+  font-family: 'League Gothic', sans-serif;
+  font-size: 2rem;
+}
+
+mat-toolbar{
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+h1{
+  margin-inline: 2rem;
+  cursor: pointer;
+}
+
+h1:hover{
+  color: #EEFF41;
+}
+
+.menu{
+  font-size: 2rem;
+}
+
+.menu:hover{
+  color: #EEFF41;
+}
+
+.icons button i{
+  font-size: 1.5rem;
+}
+
+.icons button i:hover{
+  color: #EEFF41;
+}
+
+.log:hover{
+  color: #EEFF41;
+}

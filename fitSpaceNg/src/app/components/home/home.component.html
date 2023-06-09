@@ -1,0 +1,86 @@
+<div>
+  <div class="img">
+    <div class="inside-img fonts">
+      <div>
+        <ng-container *ngIf="isLogged; else notLogged">
+          <p>ciao</p>
+        </ng-container>
+        <ng-template #notLogged>
+          <p>Metti in moto il tuo stile di vita e tieni traccia dei tuoi progressi con facilità.</p>
+          <h2>sei pronto a migliorare la tua vita!</h2><br>
+          <button mat-button color="warn" routerLink="/signup">REGISTRATI</button>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+  <section class="section-1-home">
+    <p class="padding">
+      La nostra app ti permette di registrare le tue attività fisiche, monitorare i tuoi allenamenti e seguire i tuoi
+      obiettivi di fitness.
+      Che tu sia un appassionato di corsa, un amante delle palestre, uno yogi o semplicemente interessato a rimanere
+      in forma, siamo qui per supportarti lungo il tuo percorso di fitness.
+      Registra i tuoi allenamenti, traccia le calorie bruciate, monitora la distanza percorsa e tieni nota dei tuoi
+      tempi migliori. Visualizza le tue statistiche personali e tieni traccia dei progressi raggiunti nel tempo.
+      Sfida te stesso, stabilisci nuovi obiettivi e lascia che la nostra app ti ispiri a raggiungere nuove vette di
+      fitness. Siamo qui per aiutarti a creare una routine sana e attiva e a rendere il tuo percorso di fitness
+      un'esperienza entusiasmante.
+      Inizia oggi stesso e scopri quanto può essere gratificante prenderti cura del tuo benessere fisico. Siamo
+      entusiasti di accompagnarvi in questo viaggio verso una vita più sana e attiva! <br>
+      <span class="yellow">Buon allenamento!</span>
+    </p>
+    <section>
+      <!-- <p class="padding">
+        Siamo qui per fornirti informazioni preziose sull'importanza di una corretta alimentazione nel tuo percorso di
+        fitness. Mentre ti concentri sul registrare le tue attività fisiche e monitorare i tuoi allenamenti, è
+        fondamentale ricordare che una buona nutrizione gioca un ruolo chiave nel raggiungimento dei tuoi obiettivi di
+        fitness.
+        Mangiare sano fornisce al tuo corpo i nutrienti essenziali di cui ha bisogno per funzionare al meglio. Una dieta
+        equilibrata, ricca di frutta, verdura, proteine magre e carboidrati complessi, può fornirti l'energia necessaria
+        per svolgere le tue attività fisiche in modo ottimale.
+      </p> -->
+    </section>
+  </section>
+  <section class="img-2">
+    <div class="inside-img-2 fonts">
+      <p>stay strong.</p>
+      <p>get stronger!</p>
+    </div>
+  </section>
+  <section class="section-2-home">
+    <p class="padding">
+      Il team di fitSpace, composto da personal trainer e nutrizionisti altamente qualificati, ti offre l'opportunità
+      di usufruire di schede tecniche di allenamento personalizzate e piani dietetici su misura. Siamo qui per aiutarti
+      a raggiungere i tuoi obiettivi di fitness. Per ottenere maggiori informazioni o per contattarci, ti invitiamo
+      gentilmente a compilare il modulo sottostante con i tuoi dati.
+    </p>
+    <form class="example-form">
+      <mat-form-field class="example-full-width" color="warn">
+        <mat-label>EMAIL</mat-label>
+        <input type="email" matInput>
+      </mat-form-field>
+
+      <table class="example-full-width" cellspacing="0"><tr>
+        <td><mat-form-field color="warn" class="example-full-width">
+          <mat-label>NOME</mat-label>
+          <input matInput>
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width" color="warn">
+          <mat-label>COGNOME</mat-label>
+          <input matInput>
+        </mat-form-field></td>
+      </tr></table>
+
+      <p>
+        <mat-form-field class="example-full-width" color="warn">
+          <mat-label>N. TELEFONO</mat-label>
+          <input type="number" matInput>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" color="warn">
+          <mat-label>MESSAGGIO</mat-label>
+          <textarea matInput></textarea>
+        </mat-form-field>
+      </p>
+      <button mat-button color="warn">INVIA</button>
+    </form>
+  </section>
+</div>

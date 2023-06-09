@@ -1,0 +1,89 @@
+<div class="center">
+  <h2 class="fonts">INIZIA AD AVERE UN STILE DI VITA SANO</h2>
+  <h3 class="fonts">REGISTRATI</h3>
+</div>
+<form class="example-form" [formGroup]="signupForm">
+  <table class="example-full-width" cellspacing="0">
+    <tr>
+      <td><mat-form-field class="example-full-width" color="warn">
+          <mat-label>nome</mat-label>
+          <input matInput formControlName="name">
+        </mat-form-field></td>
+      <td><mat-form-field class="example-full-width" color="warn">
+          <mat-label>cognome</mat-label>
+          <input matInput formControlName="surname">
+        </mat-form-field></td>
+    </tr>
+  </table>
+
+  <mat-form-field class="example-full-width" color="warn">
+    <mat-label>Inserisci la tua email</mat-label>
+    <input matInput placeholder="pat@example.com" formControlName="email">
+    <mat-error *ngIf="signupForm.hasError('required', 'email')">L'email è obbligatoria</mat-error>
+    <mat-error *ngIf="signupForm.hasError('email', 'email')">Email non valida</mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width" color="warn">
+    <mat-label>Inserisci la password</mat-label>
+    <input matInput [type]="hidePassword ? 'password' : 'text'" formControlName="password">
+    <button mat-icon-button matSuffix (click)="hidePassword = !hidePassword" [attr.aria-label]="'Hide password'"
+      [attr.aria-pressed]="hidePassword">
+      <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+  </mat-form-field>
+  <div
+    *ngIf="signupForm.get('password')!.invalid && (signupForm.get('password')!.dirty || signupForm.get('password')!.touched)">
+    <mat-error *ngIf="signupForm.hasError('required', 'password')">La password è obbligatoria</mat-error>
+    <mat-error *ngIf="signupForm.hasError('pattern', 'password')">La password deve esserre lunga almeno 8 caratteri, di cui almeno uno minuscolo
+      uno maiuscolo, e un numero</mat-error>
+  </div>
+
+  <mat-form-field class="example-full-width" color="warn">
+    <mat-label>Inserisci la password di conferma</mat-label>
+    <input matInput [type]="hideConfirmPassword ? 'password' : 'text'" formControlName="confirmPassword">
+    <button mat-icon-button matSuffix (click)="hideConfirmPassword = !hideConfirmPassword"
+      [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hideConfirmPassword">
+      <mat-icon>{{hideConfirmPassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+  </mat-form-field>
+  <mat-error *ngIf="signupForm.hasError('notSame')">La password non corrisponde</mat-error>
+
+  <table class="example-full-width" cellspacing="0">
+    <tr>
+      <td><mat-form-field class="example-full-width" color="warn">
+          <mat-label>inserisci il tuo peso in kg</mat-label>
+          <input type="number" min="0" max="500" matInput placeholder="80" formControlName="weight">
+        </mat-form-field></td>
+      <td><mat-form-field class="example-full-width" color="warn">
+          <mat-label>inserisci la tua altezza in cm</mat-label>
+          <input type="number" matInput min="0" max="300" placeholder="188" formControlName="height">
+        </mat-form-field></td>
+    </tr>
+  </table>
+
+  <mat-form-field class="example-full-width" appearance="fill" color="warn">
+    <mat-label>data di nascita</mat-label>
+    <input matInput [matDatepicker]="picker" formControlName="birthdate">
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <button mat-raised-button (click)="picker.open()">Open</button><br>
+
+  <mat-form-field class="example-full-width" color="warn">
+    <mat-label>inserisci un obiettivo</mat-label>
+    <mat-select formControlName="typeGoal">
+      <mat-option value="LOSE_WEIGHT">Perdere peso</mat-option>
+      <mat-option value="GAIN_WEIGHT">Prendere peso</mat-option>
+      <mat-option value="RESISTENCE_IMPROVEMENT">Aumentare la resistenza</mat-option>
+      <mat-option value="STRENGHT_IMPROVEMENT">Aumentare la forza</mat-option>
+      <mat-option value="TIME_REDUCTION">Riduzione del tempo</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button mat-button type="submit" (click)="onSubmitSignup()" [disabled]="signupForm.invalid">Registrati</button>
+</form>
+<p class="goToLogin">
+  Sei già registrato?
+  <button mat-button routerLink="/login" color="warn">Clicca qui</button>
+</p>
+
